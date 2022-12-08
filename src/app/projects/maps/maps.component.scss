@@ -1,0 +1,137 @@
+.component-container {
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    .row-1 {
+        display: flex;
+        gap: 1rem;
+        .documentation {
+            padding: 1rem;
+            flex: 1;
+            border: 1px solid #ccc;
+            display: flex;
+
+            flex-direction: column;
+            gap: 1rem;
+            .docs-list {
+                display: flex;
+                flex-direction: column;
+                gap: 1rem;
+                li {
+                    a {
+                        text-decoration: none;
+                        text-transform: uppercase;
+                    }
+                }
+            }
+        }
+        .bridges {
+            border: 1px solid #ccc;
+            padding: 1rem;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            .bridges-list {
+                list-style: none;
+                display: flex;
+                flex-direction: column;
+                gap: 1rem;
+            }
+        }
+        .visitorLocationForm {
+            flex: 1;
+            max-width: 25rem;
+            background-color: #ccc;
+            padding: 1rem;
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            header {
+                text-transform: uppercase;
+                padding: 0.2rem 0.3rem;
+                background-color: white;
+            }
+            mat-form-field {
+                background-color: white;
+                padding: 0.5rem;
+            }
+            .closest-bridge {
+                text-transform: uppercase;
+                padding: 0.2rem 0.3rem;
+                background-color: white;
+                border: 3px solid green;
+            }
+            .distance-to-closest-bridge {
+            }
+        }
+    }
+    .row-2 {
+        display: flex;
+        gap: 1rem;
+        .visitor-locations {
+            flex: 1;
+            background-color: #ccc;
+            padding: 1rem;
+
+            .visitor-locations-list {
+                display: flex;
+                flex-direction: column;
+                gap: 1rem;
+                li {
+                    display: flex;
+                    gap: 1rem;
+                    align-items: center;
+                    background-color: white;
+                    padding: 0.2rem 0.3rem;
+                }
+            }
+        }
+        .sorted-distance-to-bridges {
+            flex: 1;
+            padding: 1rem;
+            background-color: #ccc;
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            ul {
+                display: flex;
+                flex-direction: column;
+                gap: 1rem;
+                li {
+                    display: flex;
+                    background-color: white;
+                    padding: 0.2rem 0.3rem;
+                    .name {
+                        flex: 1;
+                    }
+                    .meters {
+                        flex: 1;
+                    }
+                }
+            }
+        }
+    }
+    .row-3 {
+        .closest-bridge {
+            padding: 1rem;
+            background-color: #ccc;
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            .name {
+                background-color: white;
+                padding: 0.5rem 1rem;
+                text-transform: capitalize;
+                font-size: 2rem;
+            }
+        }
+    }
+}
+
+ul {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}

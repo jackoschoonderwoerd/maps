@@ -1,0 +1,81 @@
+<div class="component-container">
+  <div class="row-1">
+
+    <div class="documentation">
+      <header>Documentation Links</header>
+      <ul class="docs-list">
+        <li>
+          <a href="https://developers.google.com/maps/documentation/javascript"
+            target="_blank">developers.google.com</a>
+
+        </li>
+        <li>
+          <a href="https://stackoverflow.com/questions/639695/how-to-convert-latitude-or-longitude-to-meters"
+            target="_blank">calculate distanceFromObject()</a>
+        </li>
+      </ul>
+    </div>
+    <div class="bridges">
+      <header>Object list</header>
+      <ul class="bridges-list">
+        <li *ngFor="let bridge of bridges">
+          <div class="name"><span></span>{{bridge.name}}</div>
+          <div class="lat"><span>lat:</span>{{bridge.lat}}</div>
+          <div class="lon"><span>lon:</span>{{bridge.lon}}</div>
+
+        </li>
+      </ul>
+    </div>
+    <form [formGroup]="visitorLocationForm"
+      class="visitorLocationForm">
+      <header>enter current location</header>
+      <mat-form-field>
+        <label for="lat">latitude</label>
+        <input type="number"
+          matInput
+          name="lat"
+          formControlName="lat">
+      </mat-form-field>
+      <mat-form-field>
+        <label for="lon">longitude</label>
+        <input type="number"
+          matInput
+          formControlName="lon"
+          name="lon">
+      </mat-form-field>
+      <button mat-raised-button
+        [disabled]="visitorLocationForm.invalid"
+        (click)="submit()">Submit</button>
+
+    </form>
+  </div>
+  <div class="row-2">
+    <div class="visitor-locations">
+      <ul class="visitor-locations-list">
+        <li *ngFor="let visitorLocation of visitorLocations">
+          <button mat-raised-button
+            (click)="onGetClosestBridge(visitorLocation)">fill form</button>
+          <div class="lat"><span>lat:</span>&nbsp;{{visitorLocation.lat}}</div>
+          <div class="lon"><span>lon:</span>&nbsp;{{visitorLocation.lon}}</div>
+        </li>
+      </ul>
+    </div>
+    <div class="sorted-distance-to-bridges">
+      <header>Distance to other objects: </header>
+      <ul class="sorted-distance-to-bridges-list">
+        <li *ngFor="let sorted of sortedDistanceToBridges">
+          <div class="name"> <span>Name:</span> &nbsp;{{sorted.name}}</div>
+          <div class="meters"><span>Meters: &nbsp;</span>{{sorted.meters | number: '1.0-0'}}</div>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div class="row-3">
+    <div class="closest-bridge"
+      *ngIf="closestBridge">Closest Bridge:
+      <div class="name">
+        Name: {{closestBridge.name}}
+      </div>
+    </div>
+  </div>
+</div>
